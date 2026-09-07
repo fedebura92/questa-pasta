@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17130f" />
+  <title>Questa Pasta | Fábrica de pastas en Virreyes</title>
+  <meta name="description" content="Questa Pasta. Fábrica de pastas artesanales en Virreyes. Conocé nuestros productos, menú, ubicación y canales de contacto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#18140f; --ink2:#33291f; --cream:#f5ecdf; --paper:#fffdf8;
+      --gold:#c89a61; --gold2:#ab7844; --line:#e5d5c2; --green:#2d7a52; --red:#8d2d35;
+      --shadow:0 18px 60px rgba(48,31,15,.14);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background-color:var(--paper);background-image:
+      radial-gradient(circle at 14% 12%,rgba(200,154,97,.08),transparent 28%),
+      radial-gradient(circle at 84% 28%,rgba(171,120,68,.055),transparent 24%),
+      radial-gradient(circle at 30% 78%,rgba(200,154,97,.045),transparent 26%),
+      linear-gradient(135deg,rgba(255,255,255,.55),rgba(250,244,235,.42) 42%,rgba(255,253,248,.7));
+      background-attachment:scroll;color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.5}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold2)}
+    h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.02;margin:0}
+    h2{font-size:clamp(2.3rem,5vw,4.2rem)}
+    p{margin:0;color:#5f5246}
+    .inline-link{font-weight:700;text-decoration:underline;text-decoration-color:rgba(171,120,68,.5);text-underline-offset:3px}
+    .inline-link:hover{color:var(--gold2)}
+    .address-link{display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-decoration-color:#c89a61;text-underline-offset:4px}
+    .address-link:hover{color:var(--gold2)}
+
+    /* NAV */
+    .nav{position:fixed;inset:0 0 auto;z-index:50;padding:18px 0;transition:.25s}
+    .nav.scrolled{background:rgba(255,253,248,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,154,97,.18);padding:11px 0}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .nav-logo-slot{width:118px;height:68px;display:block;flex:0 0 auto;margin:3px 0 3px 8px}
+    .morph-logo{position:fixed;z-index:80;object-fit:contain;transform:rotate(-3.2deg);transform-origin:center;filter:drop-shadow(0 10px 18px rgba(54,35,18,.18));will-change:left,top,width,height;pointer-events:auto}
+    .nav-links{display:flex;gap:30px;align-items:center;font-weight:600;font-size:.95rem}
+    .nav-links a:hover{color:var(--gold2)}
+    .cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:999px;background:var(--ink);color:white;font-weight:700;transition:.2s;border:1px solid var(--ink)}
+    .cta:hover{transform:translateY(-2px);background:#2c241d}
+    .cta.secondary{background:transparent;color:var(--ink);border-color:#cdb9a1}
+    .cta.pedidosya{background:transparent;color:#fff;border:2px solid #e72b32;box-shadow:0 0 0 0 rgba(231,43,50,.2)}
+    .cta.pedidosya:hover{background:#e72b32;border-color:#e72b32;color:#fff;box-shadow:0 8px 22px rgba(231,43,50,.22)}
+    .contact .cta.pedidosya{color:#b91f26;background:#fff7f5}
+    .contact .cta.pedidosya:hover{color:#fff;background:#e72b32}
+    .menu-btn{display:none;background:none;border:none;font-size:1.5rem}
+
+    /* HERO */
+    .hero{min-height:100vh;background:
+      radial-gradient(circle at 10% 20%, rgba(200,154,97,.18), transparent 30%),
+      linear-gradient(110deg,#fbf5eb 0%,#fffdf9 52%,#efe0ca 52%,#e6cfb0 100%);
+      display:grid;align-items:center;overflow:hidden;padding:120px 0 70px;position:relative}
+    .hero:after{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(255,255,255,.35);border-radius:50%;right:-140px;top:90px}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .hero-copy{position:relative;z-index:2}
+    .hero-logo-slot{width:min(300px,52vw);aspect-ratio:1.5/1;margin:0 0 16px -8px}
+    .hero h1{font-size:clamp(4.4rem,8.7vw,8.5rem);letter-spacing:-.045em;max-width:760px}
+    .hero h1 em{display:block;color:var(--gold2);font-weight:600}
+    .hero .lead{font-size:1.12rem;max-width:560px;margin:24px 0 30px;color:#625446}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-visual{position:relative;height:620px;z-index:2}
+    .photo-main{position:absolute;inset:40px 0 30px 90px;border-radius:44% 44% 24px 24px;overflow:hidden;box-shadow:var(--shadow);transform:rotate(2deg)}
+    .photo-main img{width:100%;height:100%;object-fit:cover}
+    .photo-small{position:absolute;width:230px;height:290px;left:0;bottom:18px;border-radius:26px;overflow:hidden;border:10px solid var(--paper);box-shadow:var(--shadow);transform:rotate(-6deg)}
+    .photo-small img{width:100%;height:100%;object-fit:cover}
+    .seal{position:absolute;right:-16px;bottom:22px;background:var(--ink);color:var(--cream);width:145px;height:145px;border-radius:50%;display:grid;place-items:center;text-align:center;padding:18px;font-family:'Playfair Display';font-weight:700;transform:rotate(8deg);box-shadow:var(--shadow)}
+    .hero-note{margin-top:34px;display:flex;gap:24px;flex-wrap:wrap;font-size:.92rem;color:#5b4b3d}
+    .hero-note span:before{content:"•";color:var(--gold2);margin-right:8px}
+
+    /* STRIP */
+    .strip{background:var(--ink);color:#f7ead7;padding:15px 0;overflow:hidden}
+    .strip-row{display:flex;justify-content:space-around;gap:30px;white-space:nowrap;font-weight:600;letter-spacing:.03em}
+    .strip b{color:var(--gold)}
+
+    /* SECTIONS */
+    section{padding:110px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}
+    .section-head p{max-width:540px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .about-collage{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:end}
+    .about-collage img{width:100%;object-fit:cover;border-radius:28px}
+    .about-collage img:first-child{height:520px}
+    .about-collage img:last-child{height:390px;margin-bottom:34px}
+    .about-copy p{font-size:1.08rem;margin-top:22px;max-width:550px}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+    .stat{padding:22px;background:var(--cream);border-radius:18px;border:1px solid #ead9c5}
+    .stat strong{display:block;font-family:'Playfair Display';font-size:1.5rem;margin-bottom:4px}
+    .stat span{font-size:.85rem;color:#6f6154}
+
+    /* PRODUCTS */
+    .products{background-color:#f3e8d9;background-image:
+      radial-gradient(circle at 10% 12%,rgba(255,255,255,.62),transparent 30%),
+      radial-gradient(circle at 88% 72%,rgba(200,154,97,.16),transparent 34%),
+      linear-gradient(145deg,#f7efe5 0%,#f1e2d0 52%,#f6ecdf 100%)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{position:relative;min-height:390px;border-radius:26px;overflow:hidden;background:#ddd;box-shadow:0 10px 30px rgba(60,40,20,.09)}
+    .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.45s}
+    .card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(20,14,10,.84) 100%)}
+    .card:hover img{transform:scale(1.05)}
+    .card-content{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:white}
+    .card-content h3{font-size:1.8rem;margin-bottom:5px}
+    .card-content p{color:#f2e7da;font-size:.9rem}
+    .card.wide{grid-column:span 2}
+
+    /* MENU */
+    .menu-board{background:var(--ink);border-radius:34px;padding:54px;color:#f8ecdc;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .menu-board:before{content:"QUESTA";position:absolute;right:-25px;top:-70px;font-family:'Playfair Display';font-size:11rem;color:rgba(255,255,255,.035);font-weight:700}
+    .menu-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px;position:relative;z-index:1}
+    .menu-top h2{color:white}.menu-top p{color:#cbbcab;max-width:480px}
+    .menu-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 48px;position:relative;z-index:1}
+    .menu-row{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);display:flex;gap:20px;justify-content:space-between}
+    .menu-row strong{font-family:'Playfair Display';font-size:1.25rem}
+    .menu-row span{color:#c9b8a5;font-size:.9rem;text-align:right}
+    .menu-row.menu-note{margin:26px auto 6px;padding:18px 22px;max-width:760px;border:1px solid rgba(201,154,96,.38);border-radius:18px;background:rgba(255,255,255,.055);display:block;text-align:center}
+    .menu-row.menu-note strong{display:block;color:#e3b778;font-size:1.05rem;margin-bottom:7px}
+    .menu-row.menu-note span{display:block;color:#d8c9b8;text-align:center;line-height:1.55;max-width:650px;margin:0 auto}
+    .menu-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:28px;position:relative;z-index:1;color:#cbbcab}
+
+    /* SIN TACC */
+    .tacc{padding-top:0}
+    .tacc-box{display:grid;grid-template-columns:1fr 1fr;min-height:500px;background-color:#fbf6ee;background-image:
+      radial-gradient(circle at 15% 18%,rgba(255,255,255,.78),transparent 36%),
+      linear-gradient(145deg,#fffaf3 0%,#f7ecdc 100%);border:1px solid #eadcc9;border-radius:34px;overflow:hidden}
+    .tacc-copy{padding:60px;display:flex;flex-direction:column;justify-content:center}
+    .tacc-copy .tacc-logo{width:92px;margin:0 0 16px}
+    .tacc-copy h2{margin-bottom:18px}.tacc-copy p{max-width:490px;margin-bottom:28px}
+    .tacc-photo img{width:100%;height:100%;object-fit:cover}
+
+    /* GALLERY */
+    .gallery-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-template-rows:260px 260px;gap:14px}
+    .gallery-grid img{width:100%;height:100%;object-fit:cover;border-radius:24px}
+    .gallery-grid img:first-child{grid-row:span 2}
+
+    /* CONTACT */
+    .contact{background-color:#d2a064;background-image:
+      radial-gradient(circle at 18% 20%,rgba(255,255,255,.23),transparent 28%),
+      radial-gradient(circle at 82% 76%,rgba(111,67,30,.13),transparent 30%),
+      linear-gradient(135deg,#d7aa74 0%,#c9985e 48%,#d6a871 100%)}
+    .contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:60px;align-items:center}
+    .contact h2{font-size:clamp(3rem,6vw,5.4rem);max-width:650px}
+    .contact p{color:#4d321d;max-width:560px;margin:22px 0 28px}
+    .contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .contact-card{background:#fff8ee;border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+    .contact-item{padding:18px 0;border-bottom:1px solid #ead7bf}
+    .contact-item:last-child{border-bottom:none}
+    .contact-item small{display:block;color:#8f6a43;margin-bottom:6px}.contact-item strong{font-size:1.05rem}
+
+    /* FOOTER */
+    footer{background:#18140f;color:#ddcdbb;padding:34px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.9rem}
+    .footer-inner img{width:100px;filter:brightness(1.2)}
+    .footer-inner a{margin-left:18px}.footer-inner a:hover{color:white}
+
+    /* SIGNATURE REFERENCE */
+    .signature-reference{padding:0;background:transparent}
+    .signature-reference img{width:100%;height:auto;display:block}
+
+    /* MENU INTERACTIVE */
+    .menu-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;position:relative;z-index:2}
+    .menu-tab{appearance:none;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#d9c8b6;padding:11px 16px;border-radius:999px;font:600 .86rem 'DM Sans';cursor:pointer;transition:.2s}
+    .menu-tab:hover,.menu-tab.active{background:#f6e6d1;color:#1e1711;border-color:#f6e6d1;transform:translateY(-1px)}
+    .menu-panel{display:none}.menu-panel.active{display:grid}
+
+    /* PROCESS STORY */
+    .process{background-color:#f6ede1;background-image:
+      radial-gradient(circle at 76% 18%,rgba(255,255,255,.68),transparent 28%),
+      radial-gradient(circle at 14% 80%,rgba(200,154,97,.11),transparent 28%),
+      linear-gradient(155deg,#f7eee2 0%,#efe0cc 100%);overflow:hidden}
+    .process-intro{text-align:center;max-width:780px;margin:0 auto 52px}
+    .process-intro h2{margin:6px 0 18px}.process-intro p{max-width:650px;margin:auto}
+    .process-track{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+    .process-track:before{content:"";position:absolute;left:7%;right:7%;top:42px;height:1px;background:linear-gradient(90deg,transparent,#caa77e 8%,#caa77e 92%,transparent)}
+    .process-card{position:relative;z-index:1;opacity:0;transform:translateY(18px);transition:.65s ease;background:#fffaf3;border:1px solid #ead7c0;border-radius:22px;overflow:hidden;box-shadow:0 12px 35px rgba(80,50,20,.08)}
+    .process-card.show{opacity:1;transform:none}
+    .process-card:nth-child(2){transition-delay:.08s}.process-card:nth-child(3){transition-delay:.16s}.process-card:nth-child(4){transition-delay:.24s}.process-card:nth-child(5){transition-delay:.32s}
+    .process-card img{width:100%;height:210px;object-fit:cover}
+    .process-card-body{padding:20px 18px 22px}.process-card h3{font-size:1.45rem;margin-bottom:6px}.process-card p{font-size:.9rem}
+    .reveal{opacity:0;transform:translateY(20px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+
+    @media(max-width:900px){
+      .nav-links{display:none}.menu-btn{display:block}.hero-grid,.about-grid,.tacc-box,.contact-grid{grid-template-columns:1fr}.hero{padding-top:130px}.hero-visual{height:500px;margin-top:10px}.photo-main{inset:20px 0 20px 60px}.cards{grid-template-columns:repeat(2,1fr)}.menu-cols{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:260px 220px 220px}.gallery-grid img:first-child{grid-column:span 2;grid-row:auto}.process-track{grid-template-columns:repeat(2,1fr)}.process-track:before{display:none}}
+    @media(max-width:620px){.wrap{width:min(100% - 24px,1180px)}.hero{min-height:auto;padding-bottom:40px}.hero h1{font-size:clamp(3.7rem,18vw,5.2rem)}.hero-logo-slot{width:190px;height:118px}.nav-logo-slot{width:98px;height:58px;margin-left:2px}.hero-visual{height:390px}.photo-main{inset:20px 0 20px 35px}.photo-small{width:145px;height:185px;border-width:6px}.seal{width:108px;height:108px;font-size:.8rem}.section-head{display:block}.section-head p{margin-top:16px}.cards{grid-template-columns:1fr}.card.wide{grid-column:auto}.menu-board{padding:30px 22px}.menu-top,.menu-foot{display:block}.menu-foot .cta{margin-top:18px}.menu-row{display:block}.menu-row span{display:block;text-align:left;margin-top:5px}.mini-stats{grid-template-columns:1fr}.about-collage img:first-child{height:390px}.about-collage img:last-child{height:300px}.tacc-copy{padding:36px 28px}.tacc-photo{min-height:320px}.gallery-grid{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(5,230px)}.gallery-grid img:first-child{grid-column:auto}.footer-inner{flex-direction:column;text-align:center}.footer-inner a{margin:0 8px}.process-track{grid-template-columns:1fr}.process-card{display:grid;grid-template-columns:120px 1fr}.process-card img{height:100%;min-height:130px}.process-card-body{display:flex;flex-direction:column;justify-content:center}.menu-tabs{gap:7px}.menu-tab{font-size:.79rem;padding:10px 13px}}
+  </style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#inicio" aria-label="Questa Pasta"><span id="navLogoSlot" class="nav-logo-slot" aria-hidden="true"></span></a>
+    <nav class="nav-links"><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/questapasta.virreyes/" target="_blank" rel="noreferrer">Instagram ↗</a></nav>
+    <button class="menu-btn" aria-label="Menú">☰</button>
+  </div>
+</header>
+<img id="morphLogo" class="morph-logo" src="" data-asset="logo-questa-transparent.webp" alt="Questa Pasta">
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div id="heroLogoSlot" class="hero-logo-slot" aria-hidden="true"></div>
+        <div class="eyebrow">Fábrica de pastas · Virreyes</div>
+        <h1>La pasta <em>de todos los días.</em></h1>
+        <p class="lead">Pastas frescas y rellenas, salsas y otras cosas ricas para resolver una comida como corresponde. Encontranos en <a class="address-link" href="https://www.google.com/maps/place/Av.+Avellaneda+2748,+B1645+Virreyes,+Provincia+de+Buenos+Aires/@-34.4557847,-58.5618625,17z/data=!3m1!4b1!4m6!3m5!1s0x95bca55b96059fff:0x28b92e06f2f4953c!8m2!3d-34.4557847!4d-58.5618625!16s%2Fg%2F11p6x6511s?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer">Av. Avellaneda 2748, Virreyes ↗</a>.</p>
+        <div class="hero-actions"><a class="cta" href="#menu">Ver menú</a><a class="cta secondary" href="https://wa.me/5491154187231" target="_blank" rel="noreferrer">Consultar por WhatsApp</a></div>
+        <div class="hero-note"><span>Lun a Sáb · 9:30 a 20 hs</span><span>Domingos · 9 a 13:30 hs</span></div>
+      </div>
+      <div class="hero-visual"><div class="photo-main"><img src="" data-asset="dish.webp" alt="Plato de pasta"></div><div class="photo-small"><img src="" data-asset="fresh-pasta.webp" alt="Pasta fresca"></div><div class="seal">Hecho para compartir la mesa</div></div>
+    </div>
+  </section>
+  <div class="strip"><div class="wrap strip-row"><span><b>Pastas frescas</b> · todos los días</span><span>Rellenas · Ñoquis · Salsas</span><span><b>Questa Pasta</b> · Virreyes</span></div></div>
+  <section id="nosotros">
+    <div class="wrap about-grid">
+      <div class="about-collage"><img src="" data-asset="ravioli-green.webp" alt="Ravioles artesanales"><img src="" data-asset="gnocchi.webp" alt="Ñoquis"></div>
+      <div class="about-copy"><div class="eyebrow">Nosotros</div><h2>Una fábrica de pastas de barrio, hecha para volver.</h2><p>Questa Pasta es ese lugar al que entrás pensando qué cocinar y salís con la comida prácticamente resuelta. Pastas frescas, rellenas, salsas y otros productos para todos los días.</p><div class="mini-stats"><div class="stat"><strong>Virreyes</strong><span>Av. Avellaneda 2748</span></div><div class="stat"><strong>6 días</strong><span>Lun a Sáb · 9:30 a 20</span></div><div class="stat"><strong>Domingos</strong><span>9 a 13:30 hs</span></div></div></div>
+    </div>
+  </section>
+  <section class="products" id="productos"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Productos</div><h2>Hay una pasta para cada día.</h2></div><p>Clásicos, rellenas, opciones para acompañar y algo más. Una selección pensada para que elegir sea fácil.</p></div><div class="cards"><article class="card wide"><img src="" data-asset="pumpkin-ravioli.webp" alt="Pasta rellena"><div class="card-content"><h3>Pastas rellenas</h3><p>Ravioles, raviolones, sorrentinos y más.</p></div></article><article class="card"><img src="" data-asset="pasta-long.webp" alt="Pasta fresca"><div class="card-content"><h3>Pastas frescas</h3><p>Tallarines, fettuccine, fusilli y pappardelle.</p></div></article><article class="card"><img src="" data-asset="sauce.webp" alt="Salsas"><div class="card-content"><h3>Salsas</h3><p>Para terminar el plato como corresponde.</p></div></article><article class="card"><img src="" data-asset="pizza.webp" alt="Pizzas"><div class="card-content"><h3>Y algo más</h3><p>Pizzas, empanadas, tequeños, chipá y arepas.</p></div></article><article class="card wide"><img src="" data-asset="tortellini.webp" alt="Pasta artesanal"><div class="card-content"><h3>Para todos los gustos</h3><p>También contamos con opciones Sin TACC seleccionadas.</p></div></article></div></div></section>
+  <section class="signature-reference"><img src="" data-asset="quote-section-reference.webp" alt="Frases de Questa Pasta"></section>
+  <section class="tacc"><div class="wrap"><div class="tacc-box"><div class="tacc-copy"><img class="tacc-logo" src="" data-asset="sin-tacc-transparent.webp" alt="Sin TACC"><div class="eyebrow">También tenemos opciones</div><h2>Sin TACC</h2><p>Una sección visible y fácil de identificar para quienes buscan alternativas sin TACC. Consultanos por las opciones disponibles.</p><a class="cta" href="https://wa.me/5491154187231" target="_blank" rel="noreferrer">Consultar opciones</a></div><div class="tacc-photo"><img src="" data-asset="sintacc-cropped.webp" alt="Producto sin TACC"></div></div></div></section>
+  <section id="menu"><div class="wrap"><div class="menu-board"><div class="menu-top"><div><div class="eyebrow">Nuestro menú</div><h2>Elegí qué te tienta hoy.</h2></div><p>Variedades según disponibilidad. No mostramos precios en la web; podés consultar por WhatsApp o ver el menú actualizado en PedidosYa.</p></div><div class="menu-tabs"><button class="menu-tab active" data-menu="rellenas">Pastas rellenas</button><button class="menu-tab" data-menu="frescas">Pastas frescas</button><button class="menu-tab" data-menu="especiales">Ñoquis y especiales</button><button class="menu-tab" data-menu="salsas">Salsas y acompañamientos</button><button class="menu-tab" data-menu="otros">Pizzas, empanadas y más</button><button class="menu-tab" data-menu="sintacc">Sin TACC</button></div><div class="menu-panel menu-cols active" data-panel="rellenas"><div class="menu-row"><strong>Ravioles tradicionales</strong><span>Ricota y queso · Ricota y jamón · Ricota y verdura · 4 quesos · Calabaza y muzza · Pollo y verdura</span></div><div class="menu-row"><strong>Ravioles caseros</strong><span>Ricota y queso · Ricota y jamón · Ricota y verdura · 4 quesos · Calabaza y muzza · Pollo y verdura</span></div><div class="menu-row"><strong>Raviolones</strong><span>Ricota jamón y muzza · Ricota verdura y muzza · Ricota calabaza y muzza · Berenjena cebolla y muzza · Pollo y verduras · Bondiola cebolla y queso azul</span></div><div class="menu-row"><strong>Sorrentinos</strong><span>Jamón, queso y muzza · Caprese · 4 quesos · Otras variedades según disponibilidad</span></div></div><div class="menu-panel menu-cols" data-panel="frescas"><div class="menu-row"><strong>Tallarines / cordón</strong><span>Al huevo · Espinaca · Morrón</span></div><div class="menu-row"><strong>Fettuccine / cinta</strong><span>Al huevo · Espinaca · Morrón · Huevo y albahaca</span></div><div class="menu-row"><strong>Fusilli / fusiles</strong><span>Al huevo</span></div><div class="menu-row"><strong>Pappardelle</strong><span>Al huevo</span></div></div><div class="menu-panel menu-cols" data-panel="especiales"><div class="menu-row"><strong>Ñoquis</strong><span>Papa · Espinaca · Calabaza · Remolacha</span></div><div class="menu-row"><strong>Canelones</strong><span>Ricota, jamón y muzza · Ricota, verdura y muzza · Jamón, queso y muzza</span></div><div class="menu-row"><strong>Lasagna</strong><span>Ricota, jamón y muzza · Ricota, verdura y muzza</span></div><div class="menu-row"><strong>Panqueques</strong><span>Presentación de 12 unidades</span></div></div><div class="menu-panel menu-cols" data-panel="salsas"><div class="menu-row"><strong>Salsas</strong><span>Fileto · Bolognesa · Pesto · Crema verde champiñón · 4 quesos</span></div><div class="menu-row"><strong>Queso rallado</strong><span>Queso parmesano Vaquero</span></div><div class="menu-row"><strong>Aceite de oliva extra virgen</strong><span>Botella tradicional · Saborizado con ajo, laurel y granos de pimienta</span></div><div class="menu-row"><strong>Harina PAN</strong><span>Harina de maíz blanco</span></div></div><div class="menu-panel menu-cols" data-panel="otros"><div class="menu-row"><strong>Pizzas y prepizzas</strong><span>Prepizzas x2 · Prepizzas con muzza · Pizzetas integrales</span></div><div class="menu-row"><strong>Empanadas</strong><span>Carne a cuchillo · Jamón, queso y muzza · Pollo · Tapas de empanadas</span></div><div class="menu-row"><strong>Tequeños</strong><span>Normales · Mini</span></div><div class="menu-row"><strong>Chipá</strong><span>Congelado</span></div><div class="menu-row"><strong>Arepas</strong><span>Con queso · Para rellenar</span></div></div><div class="menu-panel menu-cols" data-panel="sintacc"><div class="menu-row"><strong>Pastas largas Sin TACC</strong><span>Fettuccine · Fusilli · Tallarines al huevo · Tallarines de espinaca</span></div><div class="menu-row"><strong>Ravioles Sin TACC</strong><span>Verdura · Ricota y parmesano/albahaca · Calabaza · Pollo · Pollo y verdura · Ricota, jamón y muzza</span></div><div class="menu-row"><strong>Sorrentinos Sin TACC</strong><span>Jamón y queso · 4 quesos · Otras opciones según disponibilidad</span></div><div class="menu-row"><strong>Ñoquis Sin TACC</strong><span>De papa</span></div><div class="menu-row"><strong>Empanadas Sin TACC</strong><span>Verdura · Carne · Jamón y queso</span></div><div class="menu-row"><strong>Pizzas y tartas Sin TACC</strong><span>Prepizza individual · Pizza con queso individual · Prepizza normal · Pizza con queso normal · Tarta de verdura individual</span></div><div class="menu-row menu-note"><strong>Importante</strong><span>Estos productos no se elaboran en Questa Pasta. Provienen sellados de una fábrica especializada en Sin TACC para evitar contaminación cruzada.</span></div></div><div class="menu-foot"><span>Consultá disponibilidad y variedades del día.</span><a class="cta pedidosya" href="https://www.pedidosya.com.ar/restaurantes/san-fernando/questa-pasta-virreyes-4d285736-51de-4ae4-818e-c0f45ad777c8-menu" target="_blank" rel="noreferrer">Ver en PedidosYa</a></div></div></div></section>
+  <section class="process" id="proceso"><div class="wrap"><div class="process-intro reveal"><div class="eyebrow">De nuestra fábrica a tu mesa</div><h2>La pasta no aparece por arte de magia.</h2><p>Hay manos, masa, relleno y mucho oficio detrás de cada comida. Un recorrido corto por eso que hacemos todos los días.</p></div><div class="process-track"><article class="process-card"><img src="" data-asset="fresh-pasta.webp" alt="Preparación de pasta"><div class="process-card-body"><h3>Preparamos</h3><p>Ingredientes y masa listos para empezar.</p></div></article><article class="process-card"><img src="" data-asset="pasta-long.webp" alt="Pasta amasada"><div class="process-card-body"><h3>Amasamos</h3><p>Textura, espesor y ese punto que hace la diferencia.</p></div></article><article class="process-card"><img src="" data-asset="pumpkin-ravioli.webp" alt="Pasta rellena"><div class="process-card-body"><h3>Rellenamos</h3><p>Sabores que terminan de darle identidad a cada pasta.</p></div></article><article class="process-card"><img src="" data-asset="tortellini.webp" alt="Pasta terminada"><div class="process-card-body"><h3>Terminamos</h3><p>La dejamos lista para que te la lleves a casa.</p></div></article><article class="process-card"><img src="" data-asset="dish.webp" alt="Plato de pasta listo"><div class="process-card-body"><h3>Disfrutás</h3><p>El último paso es el más fácil. Y probablemente el mejor.</p></div></article></div></div></section>
+  <section id="galeria"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Galería</div><h2>Así se ve Questa Pasta.</h2></div><p>Producto real, sin fotos de banco. La web tiene que sentirse como una extensión del mostrador.</p></div><div class="gallery-grid"><img src="" data-asset="gallery-sorrentinos-bufalo.webp" alt="Sorrentinos artesanales"><img src="" data-asset="gallery-pizza-muzzarella.webp" alt="Pizza de muzzarella"><img src="" data-asset="gallery-noquis-remolacha.webp" alt="Ñoquis de remolacha"><img src="" data-asset="gallery-empanadas.webp" alt="Empanadas"><img src="" data-asset="gallery-lasagna.webp" alt="Lasaña"></div></div></section>
+  <section class="contact" id="contacto"><div class="wrap contact-grid"><div><div class="eyebrow" style="color:#5f3d20">Contacto</div><h2>Te esperamos en Virreyes.</h2><p>Conocé el local, mirá las novedades en Instagram o consultá el menú disponible en PedidosYa.</p><div class="contact-actions"><a class="cta" href="https://www.instagram.com/questapasta.virreyes/" target="_blank" rel="noreferrer">Instagram</a><a class="cta" href="https://wa.me/5491154187231" target="_blank" rel="noreferrer">WhatsApp</a><a class="cta pedidosya" href="https://www.pedidosya.com.ar/restaurantes/san-fernando/questa-pasta-virreyes-4d285736-51de-4ae4-818e-c0f45ad777c8-menu" target="_blank" rel="noreferrer">PedidosYa</a></div></div><div class="contact-card"><div class="contact-item"><small>Dirección</small><strong><a class="address-link" href="https://www.google.com/maps/place/Av.+Avellaneda+2748,+B1645+Virreyes,+Provincia+de+Buenos+Aires/@-34.4557847,-58.5618625,17z/data=!3m1!4b1!4m6!3m5!1s0x95bca55b96059fff:0x28b92e06f2f4953c!8m2!3d-34.4557847!4d-58.5618625!16s%2Fg%2F11p6x6511s?entry=ttu&g_ep=EgoyMDI2MDkwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer">Av. Avellaneda 2748 · Virreyes ↗</a></strong></div><div class="contact-item"><small>Instagram</small><strong><a class="address-link" href="https://www.instagram.com/questapasta.virreyes/" target="_blank" rel="noreferrer">@questapasta.virreyes ↗</a></strong></div><div class="contact-item"><small>Horarios</small><strong>Lun a Sáb · 9:30 a 20 hs<br>Domingos · 9 a 13:30 hs</strong></div><div class="contact-item"><small>WhatsApp</small><strong><a class="address-link" href="https://wa.me/5491154187231" target="_blank" rel="noreferrer">+54 9 11 5418-7231 ↗</a></strong></div></div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><img src="" data-asset="logo-questa-transparent.webp" alt="Questa Pasta"><div>Fábrica de pastas · Virreyes</div><div><a href="#menu">Menú</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/questapasta.virreyes/" target="_blank" rel="noreferrer">Instagram</a></div></div></footer>
+  <script src="assets-1.js"></script>
+  <script src="assets-2.js"></script>
+  <script src="assets-3.js"></script>
+  <script src="assets-4.js"></script>
+  <script>document.querySelectorAll('[data-asset]').forEach(img=>{const k=img.dataset.asset;if(window.QP_ASSETS&&QP_ASSETS[k]) img.src=QP_ASSETS[k];});</script>
+<script>
+  const nav = document.getElementById('nav');
+  const logo = document.getElementById('morphLogo');
+  const heroSlot = document.getElementById('heroLogoSlot');
+  const navSlot = document.getElementById('navLogoSlot');
+  let heroDoc = null;
+  let endRect = null;
+  function measureLogoPath(){const hr=heroSlot.getBoundingClientRect();const nr=navSlot.getBoundingClientRect();heroDoc={left:hr.left+window.scrollX,top:hr.top+window.scrollY,width:hr.width,height:hr.height};endRect={left:nr.left,top:nr.top,width:nr.width,height:nr.height};}
+  function lerp(a,b,t){return a+(b-a)*t;} function clamp(v,min,max){return Math.max(min,Math.min(max,v));}
+  function updateLogo(){if(!heroDoc||!endRect)measureLogoPath();const y=window.scrollY;nav.classList.toggle('scrolled',y>30);const start=0;const finish=Math.min(300,Math.max(210,window.innerHeight*.34));const t=clamp((y-start)/(finish-start),0,1);const eased=1-Math.pow(1-t,3);const naturalLeft=heroDoc.left-window.scrollX;const naturalTop=heroDoc.top-y;const left=lerp(naturalLeft,endRect.left,eased);const top=lerp(naturalTop,endRect.top,eased);const width=lerp(heroDoc.width,endRect.width,eased);const height=lerp(heroDoc.height,endRect.height,eased);logo.style.left=left+'px';logo.style.top=top+'px';logo.style.width=width+'px';logo.style.height=height+'px';}
+  function refresh(){heroDoc=null;endRect=null;measureLogoPath();updateLogo();}
+  window.addEventListener('scroll',updateLogo,{passive:true});window.addEventListener('resize',refresh);window.addEventListener('load',refresh);requestAnimationFrame(refresh);
+  const quotes={rellenas:'“¿Cuántos sorrentinos son demasiados? <strong>Todavía no lo descubrimos.</strong>”',frescas:'“La mejor parte de elegir pasta fresca es que <strong>ya arrancaste bien.</strong>”',especiales:'“Hay clásicos que no necesitan presentación. <strong>Solo un buen plato.</strong>”',salsas:'“La pasta elige compañía. <strong>Acá hay para todos los gustos.</strong>”',otros:'“Una fábrica de pastas, sí. <strong>Pero nunca solamente pasta.</strong>”',sintacc:'“Más opciones para compartir la mesa. <strong>También Sin TACC.</strong>”'};
+  document.querySelectorAll('.menu-tab').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.menu;document.querySelectorAll('.menu-tab').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.menu-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel===id));const quoteEl=document.getElementById('menuQuote');if(quoteEl)quoteEl.innerHTML=quotes[id];}));
+  const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('show')});},{threshold:.16});document.querySelectorAll('.process-card,.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
