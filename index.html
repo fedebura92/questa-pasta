@@ -6,11 +6,63 @@
   <meta name="theme-color" content="#17130f" />
   <title>Questa Pasta | Fábrica de pastas en Virreyes</title>
   <meta name="description" content="Questa Pasta. Fábrica de pastas artesanales en Virreyes. Conocé nuestros productos, menú, ubicación y canales de contacto." />
+  <link rel="canonical" href="https://www.questapasta.com.ar/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Questa Pasta" />
+  <meta property="og:title" content="Questa Pasta | Fábrica de pastas en Virreyes" />
+  <meta property="og:description" content="Pastas frescas, rellenas, salsas y mucho más. Conocé Questa Pasta en Virreyes." />
+  <meta property="og:url" content="https://www.questapasta.com.ar/" />
+  <meta property="og:image" content="https://www.questapasta.com.ar/assets/gallery-sorrentinos-bufalo.jpg" />
+  <meta property="og:image:alt" content="Sorrentinos artesanales de Questa Pasta" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Questa Pasta | Fábrica de pastas en Virreyes" />
+  <meta name="twitter:description" content="Pastas frescas, rellenas, salsas y mucho más. Conocé Questa Pasta en Virreyes." />
+  <meta name="twitter:image" content="https://www.questapasta.com.ar/assets/gallery-sorrentinos-bufalo.jpg" />
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Questa Pasta",
+    "description": "Fábrica de pastas artesanales en Virreyes.",
+    "url": "https://www.questapasta.com.ar/",
+    "image": "https://www.questapasta.com.ar/assets/gallery-sorrentinos-bufalo.jpg",
+    "logo": "https://www.questapasta.com.ar/assets/logo-questa-transparent.png",
+    "telephone": "+54 9 11 5418-7231",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Avellaneda 2748",
+      "addressLocality": "Virreyes",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "13:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/questapasta.virreyes/"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -211,6 +263,25 @@
     .menu-quote{margin:28px 0 0;text-align:center;color:#d2bfa9;font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;position:relative;z-index:2}
     .menu-quote strong{color:var(--gold);font-weight:600}
 
+
+    /* MAYORISTAS */
+    .wholesale{padding:100px 0;background-color:#efe0cc;background-image:
+      radial-gradient(circle at 12% 18%,rgba(255,255,255,.6),transparent 28%),
+      radial-gradient(circle at 88% 82%,rgba(171,120,68,.12),transparent 30%),
+      linear-gradient(135deg,#f6ecdf 0%,#ead6bc 100%)}
+    .wholesale-box{background:#fffaf2;border:1px solid rgba(171,120,68,.22);border-radius:34px;padding:52px;box-shadow:0 18px 50px rgba(69,43,20,.09);position:relative;overflow:hidden}
+    .wholesale-box:after{content:"MAYORISTAS";position:absolute;right:-15px;top:-42px;font-family:'Playfair Display',serif;font-size:7.5rem;font-weight:700;color:rgba(171,120,68,.055);pointer-events:none}
+    .wholesale-head{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:end;position:relative;z-index:1}
+    .wholesale-head h2{max-width:680px}
+    .wholesale-head p{font-size:1.04rem;max-width:520px}
+    .wholesale-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px;position:relative;z-index:1}
+    .wholesale-item{min-height:118px;border:1px solid #e8d5bd;border-radius:20px;background:rgba(255,255,255,.66);display:flex;align-items:flex-end;padding:20px;transition:.22s}
+    .wholesale-item:hover{transform:translateY(-3px);background:#fff;box-shadow:0 10px 28px rgba(65,42,21,.08)}
+    .wholesale-item strong{font-family:'Playfair Display',serif;font-size:1.42rem}
+    .wholesale-foot{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-top:34px;padding-top:28px;border-top:1px solid #e5d2ba;position:relative;z-index:1}
+    .wholesale-foot p{max-width:610px}
+    .wholesale .cta{white-space:nowrap}
+
     .quote-banner{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1.2fr) minmax(0,1fr);width:min(1060px,100%);margin:28px auto 0;background:#f7efe4;border:1px solid rgba(200,154,97,.2);border-radius:26px;overflow:hidden;box-shadow:0 12px 30px rgba(67,43,22,.065);min-height:220px}
     .quote-side{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 22px;color:#241b14;position:relative;background:radial-gradient(circle at center,rgba(255,255,255,.5),transparent 72%)}
     .quote-side p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.18rem,1.7vw,1.55rem);line-height:1.2;margin:0;max-width:300px}
@@ -236,6 +307,7 @@
       .gallery-grid img:nth-child(5){grid-column:1/3}
       .process-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.process-card{min-width:280px;scroll-snap-align:start}.process-card img{height:220px}
       .menu-panel{grid-template-columns:1fr}
+      .wholesale-head{grid-template-columns:1fr;gap:18px}.wholesale-grid{grid-template-columns:repeat(2,1fr)}
       .quote-banner{grid-template-columns:1fr 1.2fr 1fr}.quote-side{padding:20px 16px}.quote-side p{font-size:1.05rem}.quote-photo{min-height:210px}
     }
     @media(max-width:620px){
@@ -250,6 +322,7 @@
       .mini-stats{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}.card.wide{grid-column:auto}.card{min-height:360px}
       .menu-board{padding:30px 24px;border-radius:24px}.menu-top{display:block}.menu-top p{margin-top:14px}.menu-row{display:block}.menu-row span{display:block;text-align:left;margin-top:4px}
+      .wholesale{padding:74px 0}.wholesale-box{padding:32px 22px;border-radius:24px}.wholesale-grid{grid-template-columns:1fr 1fr;gap:9px}.wholesale-item{min-height:92px;padding:16px}.wholesale-item strong{font-size:1.18rem}.wholesale-foot{display:block}.wholesale-foot .cta{margin-top:20px;width:100%}.wholesale-box:after{font-size:4.8rem;top:-22px}
       .tacc-copy{padding:36px 28px}.tacc-photo{height:340px}
       .gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:250px 180px 180px}.gallery-grid img:first-child{grid-column:1/3}.gallery-grid img:nth-child(5){grid-column:1/3}
       .pasta-thread{height:220px}.pasta-thread .thread-copy{width:calc(100% - 24px);font-size:1.15rem;padding-top:82px}.roller-sep{margin-top:22px;width:calc(100% - 28px)}.roller-graphic{width:112px}.quote-banner{grid-template-columns:1fr;border-radius:24px}.quote-photo{min-height:220px;order:2}.quote-left{order:1}.quote-right{order:3}.quote-side{padding:30px 22px}.quote-side p{font-size:1.45rem}.process-card{min-width:82vw}.menu-kicker h3{font-size:2rem}
@@ -264,7 +337,7 @@
   <div class="wrap nav-inner">
     <a href="#inicio" class="brand" aria-label="Questa Pasta"><span class="nav-logo-slot" id="navLogoSlot" aria-hidden="true"></span></a>
     <nav class="nav-links">
-      <a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+      <a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#menu">Menú</a><a href="#mayoristas">Mayoristas</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
     </nav>
     <a class="cta" href="https://www.instagram.com/questapasta.virreyes/" target="_blank" rel="noreferrer">Instagram</a>
   </div>
@@ -405,6 +478,35 @@
         <div class="menu-foot"><span>Consultá disponibilidad y variedades del día.</span><a class="cta pedidosya" href="https://www.pedidosya.com.ar/restaurantes/san-fernando/questa-pasta-virreyes-4d285736-51de-4ae4-818e-c0f45ad777c8-menu" target="_blank" rel="noreferrer">Ver en PedidosYa</a></div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="wholesale" id="mayoristas">
+    <div class="wrap">
+      <div class="wholesale-box">
+        <div class="wholesale-head">
+          <div>
+            <div class="eyebrow">Venta mayorista</div>
+            <h2>Pastas y productos para tu negocio.</h2>
+          </div>
+          <p>Opciones mayoristas para comercios, restaurantes y emprendimientos gastronómicos. Consultanos por presentaciones, disponibilidad y pedidos.</p>
+        </div>
+
+        <div class="wholesale-grid" aria-label="Productos disponibles para venta mayorista">
+          <div class="wholesale-item"><strong>Ravioles</strong></div>
+          <div class="wholesale-item"><strong>Raviolones</strong></div>
+          <div class="wholesale-item"><strong>Sorrentinos</strong></div>
+          <div class="wholesale-item"><strong>Fideos</strong></div>
+          <div class="wholesale-item"><strong>Chipá</strong></div>
+          <div class="wholesale-item"><strong>Pizzas</strong></div>
+          <div class="wholesale-item"><strong>Empanadas</strong></div>
+        </div>
+
+        <div class="wholesale-foot">
+          <p>Escribinos y te contamos las opciones disponibles para compra mayorista.</p>
+          <a class="cta" href="https://wa.me/5491154187231?text=Hola%2C%20quisiera%20consultar%20por%20productos%20y%20precios%20mayoristas%20de%20Questa%20Pasta." target="_blank" rel="noreferrer">Consultar precios mayoristas</a>
+        </div>
+      </div>
     </div>
   </section>
 
